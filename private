@@ -1317,13 +1317,22 @@ function drop(id, count)
     sleep(1000)
 end
 
+function value_in_table(value, table)
+    for _, v in ipairs(table) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
 function drop_coord()
     sleep(2000)
     local changer
     local arah
 
     for _,item in pairs(drop_list) do
-        if contains(goods, item) == true then
+        if value_in_table(item, goods) then
             changer = 1
             arah = "right"
         else
@@ -1363,8 +1372,9 @@ end
 function drop_blockid()
     sleep(2000)
     local pos_drop
+
     for _,item in pairs(drop_list) do
-        if contains(goods, item) == true then
+        if value_in_table(item, goods) then
             pos_drop = storage_pos.good
         else
             pos_drop = storage_pos.bad
@@ -1399,8 +1409,8 @@ end
 
 function drop_item()
     bot:autoCollect(2,false)
-    local changer
-    local arah
+    local perubah
+    local arahnya
 
     if custom_storage then
         tele(storage_name,storage_id_door)
@@ -1425,13 +1435,14 @@ function drop_item()
         tele(geiger_world,geiger_id)
 
         for _,item in pairs(drop_list) do
-            if contains(goods, item) == true then
-                changer = 1
-                arah = "right"
+            if value_in_table(item, goods) then
+                perubah = 1
+                arahnya = "right"
             else
-                changer = -1
-                arah = "left"
+                perubah = -1
+                arahnya = "left"
             end
+            logs(perubah, arahnya)
             sleep(500)
             while getPosX() ~= 45 or getPosY() ~= 53 do
                 if bot:findPath(45,53) then
@@ -1443,11 +1454,11 @@ function drop_item()
             end
 
             while bot:getItemCount(item) > 0 do
-                if tile_drop(45 + changer, getPosY(), bot:getItemCount(item)) then
-                    face_side(arah)
+                if tile_drop(45 + perubah, getPosY(), bot:getItemCount(item)) then
+                    face_side(arahnya)
                     log_msg(string.format("Dropping Reward: %ix %s", bot:getItemCount(item), getItemInfo(item).name))
                     sleep(1500)
-                    while bot:getItemCount(item) > 0 and tile_drop(45 + changer, getPosY(), bot:getItemCount(item)) do 
+                    while bot:getItemCount(item) > 0 and tile_drop(45 + perubah, getPosY(), bot:getItemCount(item)) do 
                         drop(item)
                         sleep(1500)
                     end
