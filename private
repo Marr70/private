@@ -1,6 +1,6 @@
 bot = getBot()
-bads = {6416, 3196, 1500, 1498, 2806, 2804, 8270, 8272,8274, 4676, 4678, 4680, 4682, 4652, 4650, 4648, 4646, 11186, 10086, 10084,3204, 12502}
-goods = {2206, 2242, 2244, 2246, 2248, 2250, 3792, 3306, 4654}
+BADS = {6416, 3196, 1500, 1498, 2806, 2804, 8270, 8272,8274, 4676, 4678, 4680, 4682, 4652, 4650, 4648, 4646, 11186, 10086, 10084,3204, 12502}
+GOODIES = {2206, 2242, 2244, 2246, 2248, 2250, 3792, 3306, 4654}
 drop_list = {}
 duplicate_line = {}
 stop_script = false
@@ -1272,7 +1272,7 @@ function send_webhook(text)
             "content": null,
             "embeds": [
               {
-                "title": "]]..string.lower(getBot():getLocal().name)..[[",
+                "title": "]]..string.lower(getBot():getLocal().name)..[[ [||]]..bot:getCurrentWorld()..[[||]",
                 "description": "]]..text..[[",
                 "color": 1005735,
                 "footer": {
@@ -1468,15 +1468,18 @@ function drop_item()
 end
 
 function check_inventory()
-    for i, bagus in pairs(goods) do
+    for i, bagus in pairs(GOODIES) do
         if bot:getItemCount(bagus) > 0 then
             table.insert(drop_list, {id = bagus, tipe = "good"})
         end
+        sleep(100)
     end
-    for j, jelek in pairs(bads) do
+    sleep(500)
+    for j, jelek in pairs(BADS) do
         if bot:getItemCount(jelek) > 0 then
             table.insert(drop_list, {id = jelek, tipe = "bad"})
         end
+        sleep(100)
     end
 end
 
@@ -1520,8 +1523,8 @@ function charge_geiger()
 end
 
 function process_auto_geiger()
-    check_inventory()
     sleep(2000)
+    check_inventory()
     if #drop_list > 0 then
         sleep(2000)
         drop_item()
@@ -1648,7 +1651,7 @@ function start_geiger()
         return
     end
 
-    --cari_owner()
+    cari_owner()
 
     tt = os.time()
     logs("Started")
@@ -1665,3 +1668,6 @@ function start_geiger()
         end
     end
 end
+
+
+start_geiger()
