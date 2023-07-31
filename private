@@ -1244,7 +1244,7 @@ function reconInfo()
             "content": "@everyone",
             "embeds": [
               {
-                "title": "[]]..string.lower(bot:getLocal().name)..[[",
+                "title": "[]]..string.lower(bot:getLocal().name)..[[] status is ]]..get_enet_status()..[[",
                 "color": ]]..color..[[,
                 "footer": {
                     "text": "Bot Uptime: ]]..math.floor(ut/86400)..[[ Day ]]..math.floor(ut%86400/3600)..[[ Hour ]]..math.floor(ut%86400%3600/60)..[[ Minute \nMarr's Script | ]]..(os.date("!%a %b %d, %Y at %I:%M %p", os.time() + 7 * 60 * 60))..[["
@@ -1272,7 +1272,7 @@ function send_webhook(text)
             "content": null,
             "embeds": [
               {
-                "title": "]]..string.lower(getBot():getLocal().name)..[[ [||]]..bot:getCurrentWorld()..[[||]",
+                "title": "]]..string.lower(getBot():getLocal().name)..[[",
                 "description": "]]..text..[[",
                 "color": 1005735,
                 "footer": {
