@@ -1272,7 +1272,7 @@ function send_webhook(text)
             "content": null,
             "embeds": [
               {
-                "title": "]]..string.lower(getBot():getLocal().name)..[[ [||]]..bot:getCurrentWorld()..[[||]",
+                "title": "]]..string.lower(getBot():getLocal().name)..[[",
                 "description": "]]..text..[[",
                 "color": 1005735,
                 "footer": {
@@ -1651,7 +1651,7 @@ function start_geiger()
         return
     end
 
-    cari_owner()
+    --cari_owner()
 
     tt = os.time()
     logs("Started")
