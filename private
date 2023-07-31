@@ -1,5 +1,5 @@
 bot = getBot()
-items = {6416, 3196, 1500, 1498, 2806, 2804, 8270, 8272, 8274, 4676, 4678, 4680, 4682, 4652, 4650, 4648, 4646, 11186, 10086, 10084, 2206, 2244, 2246, 2242, 2248, 2250, 3792, 3306, 4654, 3204, 12502}
+bads = {6416, 3196, 1500, 1498, 2806, 2804, 8270, 8272,8274, 4676, 4678, 4680, 4682, 4652, 4650, 4648, 4646, 11186, 10086, 10084,3204, 12502}
 goods = {2206, 2242, 2244, 2246, 2248, 2250, 3792, 3306, 4654}
 drop_list = {}
 duplicate_line = {}
@@ -1317,22 +1317,13 @@ function drop(id, count)
     sleep(1000)
 end
 
-function value_in_table(value, table)
-    for _, v in ipairs(table) do
-        if v == value then
-            return true
-        end
-    end
-    return false
-end
-
 function drop_coord()
     sleep(2000)
     local changer
     local arah
 
-    for _,item in pairs(drop_list) do
-        if value_in_table(item, goods) then
+    for _,itm in pairs(drop_list) do
+        if itm.tipe == "good" then
             changer = 1
             arah = "right"
         else
@@ -1349,13 +1340,13 @@ function drop_coord()
             end
         end
 
-        while bot:getItemCount(item) > 0 do
-            if tile_drop(storage_pos.x + changer, getPosY(), bot:getItemCount(item)) then
+        while bot:getItemCount(itm.id) > 0 do
+            if tile_drop(storage_pos.x + changer, getPosY(), bot:getItemCount(itm.id)) then
                 face_side(arah)
-                log_msg(string.format("Dropping Reward: %ix %s", bot:getItemCount(item), getItemInfo(item).name))
+                log_msg(string.format("Dropping Reward: %ix %s", bot:getItemCount(itm.id), getItemInfo(itm.id).name))
                 sleep(1500)
-                while bot:getItemCount(item) > 0 and tile_drop(storage_pos.x + changer, getPosY(), bot:getItemCount(item)) do 
-                    drop(item)
+                while bot:getItemCount(itm.id) > 0 and tile_drop(storage_pos.x + changer, getPosY(), bot:getItemCount(itm.id)) do 
+                    drop(itm.id)
                     sleep(1500)
                 end
             else
@@ -1373,8 +1364,8 @@ function drop_blockid()
     sleep(2000)
     local pos_drop
 
-    for _,item in pairs(drop_list) do
-        if value_in_table(item, goods) then
+    for _,itm in pairs(drop_list) do
+        if itm.tipe == "good" then
             pos_drop = storage_pos.good
         else
             pos_drop = storage_pos.bad
@@ -1382,7 +1373,7 @@ function drop_blockid()
         sleep(500)
         for _,tile in pairs(bot:getTiles()) do
             if tile.fg == pos_drop or tile.bg == pos_drop then
-                if tile_drop(tile.x, tile.y, bot:getItemCount(item)) then
+                if tile_drop(tile.x, tile.y, bot:getItemCount(itm.id)) then
                     while getPosX() ~= (tile.x + 1) or getPosY() ~= tile.y do
                         if bot:findPath(tile.x + 1, tile.y) then
                             sleep(1500)
@@ -1392,15 +1383,15 @@ function drop_blockid()
                         end
                     end
                     face_side("left")
-                    log_msg(string.format("Dropping Reward: %ix %s", bot:getItemCount(item), getItemInfo(item).name))
+                    log_msg(string.format("Dropping Reward: %ix %s", bot:getItemCount(itm.id), getItemInfo(itm.id).name))
                     sleep(1500)
-                    while bot:getItemCount(item) > 0 and tile_drop(tile.x, tile.y, bot:getItemCount(item)) do
-                        drop(item)
+                    while bot:getItemCount(itm.id) > 0 and tile_drop(tile.x, tile.y, bot:getItemCount(itm.id)) do
+                        drop(itm.id)
                         sleep(1500)
                     end
                 end
             end
-            if bot:getItemCount(item) == 0 then
+            if bot:getItemCount(itm.id) == 0 then
                 break
             end
         end
@@ -1434,8 +1425,8 @@ function drop_item()
     if not custom_storage then
         tele(geiger_world,geiger_id)
 
-        for _,item in pairs(drop_list) do
-            if value_in_table(item, goods) then
+        for _,itm in pairs(drop_list) do
+            if itm.tipe == "good" then
                 perubah = 1
                 arahnya = "right"
             else
@@ -1443,7 +1434,7 @@ function drop_item()
                 arahnya = "left"
             end
             logs(perubah)
-	    logs(arahnya)
+            logs(arahnya)
             sleep(500)
             while getPosX() ~= 45 or getPosY() ~= 53 do
                 if bot:findPath(45,53) then
@@ -1454,13 +1445,13 @@ function drop_item()
                 end
             end
 
-            while bot:getItemCount(item) > 0 do
-                if tile_drop(45 + perubah, getPosY(), bot:getItemCount(item)) then
+            while bot:getItemCount(itm.id) > 0 do
+                if tile_drop(45 + perubah, getPosY(), bot:getItemCount(itm.id)) then
                     face_side(arahnya)
-                    log_msg(string.format("Dropping Reward: %ix %s", bot:getItemCount(item), getItemInfo(item).name))
+                    log_msg(string.format("Dropping Reward: %ix %s", bot:getItemCount(itm.id), getItemInfo(itm.id).name))
                     sleep(1500)
-                    while bot:getItemCount(item) > 0 and tile_drop(45 + perubah, getPosY(), bot:getItemCount(item)) do 
-                        drop(item)
+                    while bot:getItemCount(itm.id) > 0 and tile_drop(45 + perubah, getPosY(), bot:getItemCount(itm.id)) do 
+                        drop(itm.id)
                         sleep(1500)
                     end
                 else
@@ -1477,9 +1468,14 @@ function drop_item()
 end
 
 function check_inventory()
-    for i, item in pairs(items) do
-        if bot:getItemCount(item) > 0 then
-            table.insert(drop_list, item)
+    for i, bagus in pairs(goods) do
+        if bot:getItemCount(bagus) > 0 then
+            table.insert(drop_list, {id = bagus, tipe = "good"})
+        end
+    end
+    for j, jelek in pairs(bads) do
+        if bot:getItemCount(jelek) > 0 then
+            table.insert(drop_list, {id = jelek, tipe = "bad"})
         end
     end
 end
@@ -1669,7 +1665,3 @@ function start_geiger()
         end
     end
 end
-
-
-
-start_geiger()
