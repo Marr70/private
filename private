@@ -1442,7 +1442,8 @@ function drop_item()
                 perubah = -1
                 arahnya = "left"
             end
-            logs(perubah, arahnya)
+            logs(perubah)
+	    logs(arahnya)
             sleep(500)
             while getPosX() ~= 45 or getPosY() ~= 53 do
                 if bot:findPath(45,53) then
