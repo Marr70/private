@@ -1241,7 +1241,7 @@ function reconInfo()
     end
     local script = [[
         {
-            "content": "@everyone",
+            "content": "<@]]..discord_id..[[>",
             "embeds": [
               {
                 "title": "[]]..string.lower(bot:getLocal().name)..[[] status is ]]..get_enet_status()..[[",
