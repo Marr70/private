@@ -47,4 +47,4 @@ function sendStorage(msgid)
     x = httpReq(RequestINFO)
 end
 
-sendStorage()
+sendStorage(messageId)
