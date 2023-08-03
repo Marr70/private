@@ -1,0 +1,50 @@
+function sendStorage(msgid)
+    local script = [[
+    {
+        "content": null,
+        "embeds": [
+        {
+            "title": "World: ||MARRSCST||",
+            "color": 60415,
+            "fields": [
+            {
+                "name": "[Bad Items]",
+                "value": "<:StarFuel:1136676403916591154> Star Fuel :\n<:NuclearFuel:1136676344076456077> Nuclear Fuel :\n<:OStuff:1136676564650692639> Orange Stuff :\n<:PStuff:1136676534623686746> Purple Stuff :\n<:BLStuff:1136676639946850384> Blue Stuff :\n<:GStuff:1136676602701434910> Green Stuff :\n<:RStuff:1136676492596740176> Red Stuff :\n<:WStuff:1136676454877380638> White Stuff :\n<:BStuff:1136676679381684364> Black Stuff :\n<:GNeck:1136676221263028374> Green VNeck :\n<:BNeck:1136676294424277172> Blue VNeck :",
+                "inline": true
+            },
+            {
+                "name": "[Bad Items]",
+                "value": "<:PNeck:1136676041881026632> Purple VNeck :\n<:ONeck:1136676131035156572> Orange VNeck :\n<:HazmatBoot:1136675978240852120> Hazmat Boots :\n<:HazmatPants:1136675886817607680> Hazmat Pants :\n<:HazmatSuit:1136675828810387597> Hazmat Suits :\n<:HazmatHelmet:1136675923849121824> Hazmat Helmet :\n<:DigitalSign:1136675778986246146> Digital Sign :\n<:AnimeFemale:1136675729417977956> Anime Female :\n<:AnimeMale:1136675689614020668> Anime Male :\n<:NerdHair:1136675648899911851> Nerd Hair :\n<:TreeDeco:1136675561578713199> Tree Decoration :",
+                "inline": true
+            },
+            {
+                "name": "[Good Items]",
+                "value": "<:GCharger:1136676721928704010> Geiger Charger : \n<:DBattery:1136676755269222520> D Battery : \n<:BCrystal:1136677044672012298> Black Crystal :\n<:WCrystal:1136677002754134057> White Crystal :\n<:BLCrystal:1136676911561580714> Blue Crystal :\n<:RCrystal:1136676963898101901> Red Crystal :\n<:GCrystal:1136676868280557719> Green Crystal :",
+                "inline": true
+            },
+            {
+                "name": "[Estimated Profit]",
+                "value": "5450 <:wls:1135109229812924446>"
+            }
+            ],
+            "footer": {
+            "text": "Marr Script",
+            "icon_url": "https://i.ibb.co/5nsZxb6/Marr-script-1.png"
+            },
+            "timestamp": "2023-08-03T14:42:00.000Z"
+        }
+        ],
+        "username": "Storage Logs",
+        "avatar_url": "https://i.ibb.co/5nsZxb6/Marr-script-1.png",
+        "attachments": []
+    }]]
+
+    RequestINFO = {}
+    RequestINFO.url = webhookStorageUrl.."/messages/"..msgid
+    RequestINFO.method = PATCH
+    RequestINFO.json = true
+    RequestINFO.postData = script
+    x = httpReq(RequestINFO)
+end
+
+sendStorage()
