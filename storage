@@ -19,7 +19,7 @@ function getCount(id)
             return itm
         end
     end
-    return 0
+    return "?"
 end
 
 function sendStorage(msgid)
