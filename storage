@@ -1,7 +1,7 @@
 webhookStorageUrl = "https://discord.com/api/webhooks/1136668624254402660/5y88v0jVu22wbFz5okkNjeZKIW0kt0cJog6Df4zP_VzI5CFfOnV4GT1oyIhDZCQf4i05"
 messageId = "1136690878019293195"
 storageList = {}
-
+bot = getBot()
 
 function scanStorage()
     for i, obj in pairs(bot:getObjects()) do
