@@ -12,17 +12,7 @@ function sendStorage(msgid)
             "fields": [
             {
                 "name": "[Bad Items]",
-                "value": ((<:StarFuel:1136676403916591154> Star Fuel :
-                <:NuclearFuel:1136676344076456077> Nuclear Fuel :
-                <:OStuff:1136676564650692639> Orange Stuff :
-                <:PStuff:1136676534623686746> Purple Stuff :
-                <:BLStuff:1136676639946850384> Blue Stuff :
-                <:GStuff:1136676602701434910> Green Stuff :
-                <:RStuff:1136676492596740176> Red Stuff :
-                <:WStuff:1136676454877380638> White Stuff :
-                <:BStuff:1136676679381684364> Black Stuff :
-                <:GNeck:1136676221263028374> Green VNeck :
-                <:BNeck:1136676294424277172> Blue VNeck :)),
+                "value": <:StarFuel:1136676403916591154> Star Fuel : \n<:NuclearFuel:1136676344076456077> Nuclear Fuel : \n<:OStuff:1136676564650692639> Orange Stuff : \n<:PStuff:1136676534623686746> Purple Stuff : \n<:BLStuff:1136676639946850384> Blue Stuff : \n<:GStuff:1136676602701434910> Green Stuff : \n<:RStuff:1136676492596740176> Red Stuff : \n<:WStuff:1136676454877380638> White Stuff : \n<:BStuff:1136676679381684364> Black Stuff : \n<:GNeck:1136676221263028374> Green VNeck : \n<:BNeck:1136676294424277172> Blue VNeck :,
                 "inline": true
             },
             {
