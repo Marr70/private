@@ -19,7 +19,7 @@ function getCount(id)
             return itm
         end
     end
-    return "?"
+    return 0
 end
 
 function sendStorage(msgid)
@@ -50,7 +50,7 @@ function sendStorage(msgid)
             },
             {
                 "name": "[Estimated Profit]",
-                "value": "6969 <:wls:1135109229812924446>"
+                "value": "70707 <:wls:1135109229812924446>"
             }
             ],
             "footer": {
