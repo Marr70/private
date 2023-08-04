@@ -56,10 +56,8 @@ function sendStorage(msgid)
             "footer": {
             "text": "Marr Script",
             "icon_url": "https://i.ibb.co/5nsZxb6/Marr-script-1.png"
-            },
-            "timestamp": "2023-08-03T14:42:00.000Z"
-        }
-        ],
+            }
+        }],
         "username": "Storage Logs",
         "avatar_url": "https://i.ibb.co/5nsZxb6/Marr-script-1.png",
         "attachments": []
