@@ -91,7 +91,7 @@ function sendStorage(msgid)
             }
             ],
             "footer": {
-            "text": "Marr Script",
+            "text": "Marr's Script | ]]..(os.date("!%a %b %d, %Y at %I:%M %p", os.time() + 7 * 60 * 60))..[[",
             "icon_url": "https://i.ibb.co/5nsZxb6/Marr-script-1.png"
             }
         }],
