@@ -22,35 +22,72 @@ function getCount(id)
     return 0
 end
 
+function countProfit()
+    local count = 0
+    if storageList[4654] then
+        count = count + (storageList[4654] * 60)
+    end
+    sleep(200)
+    if storageList[3306] then
+        count = count + (storageList[3306] * 2)
+    end
+    sleep(200)
+    if storageList[2250] then
+        count = count + (storageList[2250] * 55)
+    end
+    sleep(200)
+    if storageList[2248] then
+        count = count + (storageList[2248] * 45)
+    end
+    sleep(200)
+    if storageList[2246] then
+        count = count + (storageList[2246] * 1)
+    end
+    sleep(200)
+    if storageList[2242] then
+        count = count + (storageList[2242] * 1)
+    end
+    sleep(200)
+    if storageList[2244] then
+        count = count + (storageList[2244] * 1)
+    end
+    sleep(500)
+    return count
+end
+
 function sendStorage(msgid)
     scanStorage()
     sleep(500)
+    local profit = countProfit()
+    local DL = math.floor(profit/100)
+    local WL = math.floor(profit%100)
+
     local script = [[
     {
         "content": null,
         "embeds": [
         {
-            "title": "World: ||MARRSCST||",
+            "title": "World: ||]]..string.upper(bot:getCurrentWorld())..[[||",
             "color": 60415,
             "fields": [
             {
                 "name": "[Bad Items]",
-                "value": "<:StarFuel:1136676403916591154> Star Fuel : ]]..getCount(6416)..[[\n<:NuclearFuel:1136676344076456077> Nuclear Fuel : \n<:OStuff:1136676564650692639> Orange Stuff : \n<:PStuff:1136676534623686746> Purple Stuff : \n<:BLStuff:1136676639946850384> Blue Stuff : \n<:GStuff:1136676602701434910> Green Stuff : \n<:RStuff:1136676492596740176> Red Stuff : \n<:WStuff:1136676454877380638> White Stuff : \n<:BStuff:1136676679381684364> Black Stuff : \n<:GNeck:1136676221263028374> Green VNeck : \n<:BNeck:1136676294424277172> Blue VNeck :",
+                "value": "<:StarFuel:1136676403916591154> **Star Fuel :** ]]..getCount(6416)..[[\n<:NuclearFuel:1136676344076456077> **Nuclear Fuel :** ]]..getCount(3196)..[[\n<:OStuff:1136676564650692639> **Orange Stuff :** ]]..getCount(1500)..[[\n<:PStuff:1136676534623686746> **Purple Stuff :** ]]..getCount(1498)..[[\n<:BLStuff:1136676639946850384> **Blue Stuff :** ]]..getCount(2806)..[[\n<:GStuff:1136676602701434910> **Green Stuff :** ]]..getCount(2804)..[[\n<:RStuff:1136676492596740176> **Red Stuff :** ]]..getCount(8270)..[[\n<:WStuff:1136676454877380638> **White Stuff :** ]]..getCount(8272)..[[\n<:BStuff:1136676679381684364> **Black Stuff :** ]]..getCount(8274)..[[\n<:GNeck:1136676221263028374> **Green V-Neck :** ]]..getCount(4676)..[[\n<:BNeck:1136676294424277172> **Blue V-Neck :** ]]..getCount(4678)..[[",
                 "inline": true
             },
             {
                 "name": "[Bad Items]",
-                "value": "<:PNeck:1136676041881026632> Purple VNeck :\n<:ONeck:1136676131035156572> Orange VNeck :\n<:HazmatBoot:1136675978240852120> Hazmat Boots :\n<:HazmatPants:1136675886817607680> Hazmat Pants :\n<:HazmatSuit:1136675828810387597> Hazmat Suits :\n<:HazmatHelmet:1136675923849121824> Hazmat Helmet :\n<:DigitalSign:1136675778986246146> Digital Sign :\n<:AnimeFemale:1136675729417977956> Anime Female :\n<:AnimeMale:1136675689614020668> Anime Male :\n<:NerdHair:1136675648899911851> Nerd Hair :\n<:TreeDeco:1136675561578713199> Tree Decoration :",
+                "value": "<:PNeck:1136676041881026632> **Purple V-Neck** ]]..getCount(4680)..[[:\n<:ONeck:1136676131035156572> **Orange V-Neck :** ]]..getCount(4682)..[[\n<:HazmatBoot:1136675978240852120> **Hazmat Boots :** ]]..getCount(4646)..[[\n<:HazmatPants:1136675886817607680> **Hazmat Pants :** ]]..getCount(4648)..[[\n<:HazmatSuit:1136675828810387597> **azmat Suits :** ]]..getCount(4650)..[[\n<:HazmatHelmet:1136675923849121824> **Hazmat Helmet :** ]]..getCount(4652)..[[\n<:DigitalSign:1136675778986246146> **Digital Sign :** ]]..getCount(11186)..[[\n<:AnimeFemale:1136675729417977956> **Anime Female :** ]]..getCount(10086)..[[\n<:AnimeMale:1136675689614020668> **Anime Male :** ]]..getCount(10084)..[[\n<:NerdHair:1136675648899911851> **Nerd Hair :** ]]..getCount(12502)..[[\n<:TreeDeco:1136675561578713199> **Tree Decorations :** ]]..getCount(3204)..[[",
                 "inline": true
             },
             {
                 "name": "[Good Items]",
-                "value": "<:GCharger:1136676721928704010> Geiger Charger : \n<:DBattery:1136676755269222520> D Battery : \n<:BCrystal:1136677044672012298> Black Crystal :\n<:WCrystal:1136677002754134057> White Crystal :\n<:BLCrystal:1136676911561580714> Blue Crystal :\n<:RCrystal:1136676963898101901> Red Crystal :\n<:GCrystal:1136676868280557719> Green Crystal :",
+                "value": "<:GCharger:1136676721928704010> **Geiger Charger :** ]]..getCount(4654)..[[\n<:DBattery:1136676755269222520> **D Battery :** ]]..getCount(3306)..[[\n<:BCrystal:1136677044672012298> **Black Crystal :** ]]..getCount(2250)..[[\n<:WCrystal:1136677002754134057> **White Crystal :** ]]..getCount(2248)..[[\n<:BLCrystal:1136676911561580714> **Blue Crystal :** ]]..getCount(2246)..[[\n<:RCrystal:1136676963898101901> **Red Crystal :** ]]..getCount(2242)..[[\n<:GCrystal:1136676868280557719> **Green Crystal :** ]]..getCount(2244)..[[",
                 "inline": true
             },
             {
                 "name": "[Estimated Profit]",
-                "value": "70707 <:wls:1135109229812924446>"
+                "value": "]]..DL..[[ <:diamong:1136941075513233418> ]]..WL..[[ <:wls:1135109229812924446>"
             }
             ],
             "footer": {
