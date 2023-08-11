@@ -4,8 +4,8 @@ function sendcaptcha()
             "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
             "task": {
               "type": "ReCaptchaV2Task",
-              "websiteURL": "https://www.google.com/recaptcha/api2/demo",
-              "websiteKey": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
+              "websiteURL": "https://www.growtopiagame.com/player/login?token=7Xc84tcjEcheQKXPQYAa%2FYQEQUBiXLgZBgkUI1Taj1lxAiw9xNbthghIDi1Z6VfVlMpZfyhtMmL0QtS5pCsnr8qX%2BgaEOfLPJ0Avq7QfLgKQuMIvI3qJQIPQzS4c31zZJxBrJYSZvVdZl8vX2vBdH8%2FZSONtT%2Bhw5uEDsZPB7cYo%2FeELgGSVnUi25BZMQ1q8Wpx5Zla7p58CrqGzYIHntzW48C6rewrzpyTMizNJMJforcNBUOSAMb95GoeXAluXYYAClGorepqQFGXc2C15vP5IwS6I0hAl5SF7ZU7fhFg%3D&platformID=2",
+              "websiteKey": "6LdPe_4UAAAAAJ8vlXFg6CuLxZEluUNUtbU87ZGs",
               "isInvisible": false,
               "pageAction": "submit"
             }
@@ -21,6 +21,8 @@ function sendcaptcha()
     if x.success then
         log("Response Body : ",x.body)
         log("Response Http Status Code : ",x.httpCode)
+        resultId = x.body:match('"taskId": "(.-)"')
+        log(resultId)
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
@@ -76,4 +78,4 @@ function getresult()
     end
 end
 
-log("bisa")
+log("yokbisayok")
