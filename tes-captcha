@@ -1,7 +1,7 @@
 function sendcaptcha()
     local text = [[
         {
-            "clientKey": "CAP-5AE19153ACD728D2C6DABEA2B09F78D3",
+            "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
             "task": {
               "type": "ReCaptchaV2Task",
               "websiteURL": "https://www.google.com/recaptcha/api2/demo",
@@ -26,4 +26,4 @@ function sendcaptcha()
     end
 end
 
-log("jancok")
+log("ancok")
