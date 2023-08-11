@@ -9,10 +9,6 @@ function sendcaptcha()
               "websiteURL": "https://www.google.com/recaptcha/api2/demo",
               //Required
               "websiteKey": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
-              "enterprisePayload": {
-                //Optional, required if the website uses recaptcha enterprise
-                "s": "SOME_ADDITIONAL_TOKEN"
-              },
               "isInvisible": false,
               // Optional
               "pageAction": "submit",
@@ -48,3 +44,5 @@ function sendcaptcha()
         log("Request Failed Error Msg : ",x.failInfo)
     end
 end
+
+log("lol")
