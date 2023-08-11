@@ -23,7 +23,7 @@ function sendcaptcha()
         log("kontool"..jancok)
         cleaned = jancok:gsub('[%s"]', '')
         resultId = cleaned:match('taskId:(.*),')
-        log(cleaned)
+        log(resultId)
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
@@ -51,4 +51,4 @@ function getresult()
     end
 end
 
-log("bakso")
+log("ehe")
