@@ -19,9 +19,9 @@ function sendcaptcha()
     ReqInfo.postData = text
     x = httpReq(ReqInfo)
     if x.success then
-        response = tostring(x.body)
-        log(response)
-        cleaned = response:gsub('[%s"]', '')
+        jancok = tostring(x.body)
+        log("kontool"..jancok)
+        cleaned = jancok:gsub('[%s"]', '')
         resultId = cleaned:match('taskId:(.*),')
         return cleaned
     else
@@ -79,4 +79,4 @@ function getresult()
     end
 end
 
-log("adfsn")
+log("tailah")
