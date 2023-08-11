@@ -26,4 +26,54 @@ function sendcaptcha()
     end
 end
 
-log("woeanjeng")
+function sendcaptcha()
+    local text = [[
+        {
+            "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
+            "task": {
+              "type": "ReCaptchaV2Task",
+              "websiteURL": "https://www.google.com/recaptcha/api2/demo",
+              "websiteKey": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
+              "isInvisible": false,
+              "pageAction": "submit"
+            }
+        }          
+    ]]
+
+    ReqInfo = {}
+    ReqInfo.url = "https://api.capsolver.com/createTask"
+    ReqInfo.method = POST
+    ReqInfo.json = true
+    ReqInfo.postData = text
+    x = httpReq(ReqInfo)
+    if x.success then
+        log("Response Body : ",x.body)
+        log("Response Http Status Code : ",x.httpCode)
+    else
+        log("Request Failed Error Msg : ",x.failInfo)
+    end
+end
+
+function getresult()
+    local text = [[
+        {
+            "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
+            "taskId": "4d7ecfe2-da9d-4737-a4be-e9da361ad1d9"
+        }          
+    ]]
+
+    ReqInfo = {}
+    ReqInfo.url = "https://api.capsolver.com/getTaskResult"
+    ReqInfo.method = POST
+    ReqInfo.json = true
+    ReqInfo.postData = text
+    x = httpReq(ReqInfo)
+    if x.success then
+        log("Response Body : ",x.body)
+        log("Response Http Status Code : ",x.httpCode)
+    else
+        log("Request Failed Error Msg : ",x.failInfo)
+    end
+end
+
+log("bisa")
