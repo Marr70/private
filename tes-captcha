@@ -4,7 +4,7 @@ function sendcaptcha()
             "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
             "task": {
               "type": "ReCaptchaV2Task",
-              "websiteURL": "https://www.growtopiagame.com/player/login?token=7Xc84tcjEcheQKXPQYAa%2FYQEQUBiXLgZBgkUI1Taj1lxAiw9xNbthghIDi1Z6VfVlMpZfyhtMmL0QtS5pCsnr8qX%2BgaEOfLPJ0Avq7QfLgKQuMIvI3qJQIPQzS4c31zZJxBrJYSZvVdZl8vX2vBdH8%2FZSONtT%2Bhw5uEDsZPB7cYo%2FeELgGSVnUi25BZMQ1q8Wpx5Zla7p58CrqGzYIHntzW48C6rewrzpyTMizNJMJforcNBUOSAMb95GoeXAluXYYAClGorepqQFGXc2C15vP5IwS6I0hAl5SF7ZU7fhFg%3D&platformID=2",
+              "websiteURL": "https://www.growtopiagame.com/player/login?token=7Xc84tcjEcheQKXPQYAa%2FT6LU4jA7alJxK%2BvSbbh5lbL3hgdbHr8exCN67lD4VVsXX2olWcJf5ZH3G5M%2BBGGOklfmALAEqpA5iSKPFRKJ64bIBWOQQqw0KEUWn%2F%2BfoP8DMtpWEmsceX%2B0GTCxNSW1I%2Fw9%2BtV6fUWo7cQFhr63HqUO0fE9LXZyYFNMGd2Srts2nKbrgTeXXaV8yTQSfFXrfgenhM%2FfZE0ykgbx18wYmiqQVke%2F7ANf6jCxMYk05o7hIo%2FBKoCkcFaTghFBvweJdJXIACMD0gvkWcuLG6LfYY%3D&platformID=2",
               "websiteKey": "6LdPe_4UAAAAAJ8vlXFg6CuLxZEluUNUtbU87ZGs",
               "isInvisible": false,
               "pageAction": "submit"
@@ -52,4 +52,4 @@ function getresult(idnya)
     end
 end
 
-log("putih")
+log("ireng")
