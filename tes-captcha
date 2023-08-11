@@ -22,7 +22,7 @@ function sendcaptcha()
     rekues1 = httpReq(ReqInfo)
 
     if rekues1.success then
-        jancok = x.body
+        jancok = rekues1.body
         cleaned = jancok:gsub('[%s"]', '')
         resultId = cleaned:match('taskId:(.*),')
         log(jancok)
@@ -54,4 +54,4 @@ function getresult(idnya)
     end
 end
 
-log("pentil")
+log("ksksksasdf")
