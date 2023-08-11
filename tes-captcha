@@ -1,4 +1,5 @@
 resultId = 0
+resultStatus = ""
 
 function sendcaptcha(link)
     local text = [[
@@ -48,10 +49,13 @@ function getresult(idnya)
     rekues2 = httpReq(ReqInfo)
     if rekues2.success then
         ngentod = rekues2.body
+        klin = ngentod:gsub('[%s"]', '')
+        resultStatus = klin:match('status:(.*),')
         log(ngentod)
+        log(resultStatus)
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
 end
 
-log("HANTU")
+log("MPE")
