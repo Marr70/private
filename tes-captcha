@@ -54,4 +54,4 @@ function getresult(idnya)
     end
 end
 
-log("BURUNG")
+log("CPAS")
