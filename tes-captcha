@@ -24,6 +24,7 @@ function sendcaptcha()
         log("Response Http Status Code : ",x.httpCode)
         sleep(1000)
         local cleaned = response:gsub('[%s"]', '')
+        log(cleaned)
         local resultId = cleaned:match('taskId:(.*),')
         log(resultId)
     else
@@ -81,4 +82,4 @@ function getresult()
     end
 end
 
-log("ayam")
+log("pitek")
