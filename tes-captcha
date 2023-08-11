@@ -26,4 +26,4 @@ function sendcaptcha()
     end
 end
 
-log("anjing")
+log("woeanjeng")
