@@ -1,10 +1,12 @@
+resultId = 0
+
 function sendcaptcha()
     local text = [[
         {
             "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
             "task": {
               "type": "ReCaptchaV2Task",
-              "websiteURL": "https://www.growtopiagame.com/player/login?token=7Xc84tcjEcheQKXPQYAa%2FT6LU4jA7alJxK%2BvSbbh5lbL3hgdbHr8exCN67lD4VVsXX2olWcJf5ZH3G5M%2BBGGOklfmALAEqpA5iSKPFRKJ64bIBWOQQqw0KEUWn%2F%2BfoP8DMtpWEmsceX%2B0GTCxNSW1I%2Fw9%2BtV6fUWo7cQFhr63HqUO0fE9LXZyYFNMGd2Srts2nKbrgTeXXaV8yTQSfFXrfgenhM%2FfZE0ykgbx18wYmiqQVke%2F7ANf6jCxMYk05o7hIo%2FBKoCkcFaTghFBvweJdJXIACMD0gvkWcuLG6LfYY%3D&platformID=2",
+              "websiteURL": "https://www.growtopiagame.com/player/login?token=7Xc84tcjEcheQKXPQYAa%2FZkyRfIfmgFAr5ow3BkS%2BGRDLlpdjcCFEEiKA%2FvvdxYFtPmJkQnrqMnHcKgUgL3klr6hJC5l80%2FXhpCJBsK%2B5hIl9LRok6%2BB3%2FFn%2FbY8WXsqtIuUlCr%2FZB1tWg6zISERjOaJdM4FKCW5WjVfQDbL419h8%2FQ1h3Qs4342HgjndZSQI%2BDwp8Hxs%2B7epXP8B8S7M0oXmAEafEQbCFavGW%2FlbByGtZtpxviULzClttf%2F61iBqstAN2WNn%2FOq6W9cpmRB%2FruSx%2BKdREredMjrOnJAt5k%3D&platformID=2",
               "websiteKey": "6LdPe_4UAAAAAJ8vlXFg6CuLxZEluUNUtbU87ZGs",
               "isInvisible": false,
               "pageAction": "submit"
@@ -18,16 +20,15 @@ function sendcaptcha()
     ReqInfo.json = true
     ReqInfo.postData = text
     rekues1 = httpReq(ReqInfo)
+
     if rekues1.success then
         jancok = x.body
         cleaned = jancok:gsub('[%s"]', '')
         resultId = cleaned:match('taskId:(.*),')
         log(jancok)
         log(resultId)
-        return resultId
     else
         log("Request Failed Error Msg : ",x.failInfo)
-        return 0
     end
 end
 
@@ -53,4 +54,4 @@ function getresult(idnya)
     end
 end
 
-log("hentof")
+log("pentil")
