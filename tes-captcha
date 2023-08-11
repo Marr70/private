@@ -1,12 +1,12 @@
 resultId = 0
 
-function sendcaptcha()
+function sendcaptcha(link)
     local text = [[
         {
             "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
             "task": {
               "type": "ReCaptchaV2Task",
-              "websiteURL": "https://www.growtopiagame.com/player/login?token=7Xc84tcjEcheQKXPQYAa%2FT6LU4jA7alJxK%2BvSbbh5laPgw%2Fegaa2iBnniYwRaSfA134JkyUEcf%2F9QacYhQMGGb6hJC5l80%2FXhpCJBsK%2B5hK66eb4%2BnIVF%2Fz%2B00m0OSFff0iQDy0vk%2Fv7mwnwtGW3S%2Bq0BWV%2FkhdhB8pwT2xcpVvKYPwYXcwTrlaoGTTOKoGxfTcIX%2F%2FfyMW9j%2FfpHEj8hJ30IsnJ3xxdUAOUA%2Bj3vymGtZtpxviULzClttf%2F61iBgPOTEJgB9StatZQRZRddLruSx%2BKdREredMjrOnJAt5k%3D&platformID=2",
+              "websiteURL": "]]..link..[[",
               "websiteKey": "6LdPe_4UAAAAAJ8vlXFg6CuLxZEluUNUtbU87ZGs",
               "isInvisible": false,
               "pageAction": "submit"
@@ -54,4 +54,4 @@ function getresult(idnya)
     end
 end
 
-log("CPAS")
+log("HANTU")
