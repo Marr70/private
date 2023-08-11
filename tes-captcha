@@ -19,10 +19,11 @@ function sendcaptcha()
     ReqInfo.postData = text
     x = httpReq(ReqInfo)
     if x.success then
-        response = x.body
-        log("Response Body : ",response)
+        local response = x.body
+        log(response)
         log("Response Http Status Code : ",x.httpCode)
-        resultId = string.match(response, '"taskId": "(.-)"')
+        sleep(1000)
+        local resultId = response:match('"taskId":(.*)')
         log(resultId)
     else
         log("Request Failed Error Msg : ",x.failInfo)
@@ -79,4 +80,4 @@ function getresult()
     end
 end
 
-log("sayoka")
+log("amasdf")
