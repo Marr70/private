@@ -17,23 +17,24 @@ function sendcaptcha()
     ReqInfo.method = POST
     ReqInfo.json = true
     ReqInfo.postData = text
-    x = httpReq(ReqInfo)
-    if x.success then
+    rekues1 = httpReq(ReqInfo)
+    if rekues1.success then
         jancok = x.body
-        log("kontool"..jancok)
         cleaned = jancok:gsub('[%s"]', '')
         resultId = cleaned:match('taskId:(.*),')
         log(resultId)
+        return resultId
     else
         log("Request Failed Error Msg : ",x.failInfo)
+        return 0
     end
 end
 
-function getresult()
+function getresult(idnya)
     local text = [[
         {
             "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
-            "taskId": "4d7ecfe2-da9d-4737-a4be-e9da361ad1d9"
+            "taskId": "]]..idnya..[["
         }          
     ]]
 
@@ -42,13 +43,13 @@ function getresult()
     ReqInfo.method = POST
     ReqInfo.json = true
     ReqInfo.postData = text
-    x = httpReq(ReqInfo)
-    if x.success then
-        log("Response Body : ",x.body)
-        log("Response Http Status Code : ",x.httpCode)
+    rekues2 = httpReq(ReqInfo)
+    if rekues2.success then
+        ngentod = rekues2.body
+        log(ngentod)
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
 end
 
-log("ehe")
+log("putih")
