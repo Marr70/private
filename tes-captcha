@@ -1,14 +1,38 @@
 function sendcaptcha()
     local text = [[
         {
-            "clientKey": "CAP-5AE19153ACD728D2C6DABEA2B09F78D3",
+            "clientKey": "YOUR_API_KEY",
             "task": {
-              "type": "ReCaptchaV2TaskProxyLess",
+              //Required
+              "type": "ReCaptchaV2Task",
+              //Required
               "websiteURL": "https://www.google.com/recaptcha/api2/demo",
+              //Required
               "websiteKey": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
-              "cookies": "cookiename=1;cookiename=2;cookieName=3"
+              "enterprisePayload": {
+                //Optional, required if the website uses recaptcha enterprise
+                "s": "SOME_ADDITIONAL_TOKEN"
+              },
+              "isInvisible": false,
+              // Optional
+              "pageAction": "submit",
+              //Optional
+              "apiDomain": "",
+              //Optional
+              "userAgent": "",
+              //Optional
+              "cookies": [
+                {
+                  "name": "__Secure-3PSID",
+                  "value": "AIKkIs3ch7YsxxxxYIzRqNZPGm60cdHozgwfUW1o8MF3kRcf8clJscTI6OtCqVpqNF8I88pLBJkUgQ"
+                },
+                {
+                  "name": "__Secure-3PAPISID",
+                  "value": "TKS1iVpGxYbxxxk0n2o/AytXQTb6RUALqxSEL"
+                }
+              ]
             }
-        }
+        }          
     ]]
 
     ReqInfo = {}
