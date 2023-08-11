@@ -82,4 +82,4 @@ function getresult()
     end
 end
 
-log("curut")
+log("ppl")
