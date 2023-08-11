@@ -22,6 +22,7 @@ function sendcaptcha()
         jancok = x.body
         cleaned = jancok:gsub('[%s"]', '')
         resultId = cleaned:match('taskId:(.*),')
+        log(jancok)
         log(resultId)
         return resultId
     else
@@ -52,4 +53,4 @@ function getresult(idnya)
     end
 end
 
-log("ireng")
+log("peka")
