@@ -1,3 +1,4 @@
+
 resultId = 0
 resultStatus = ""
 
@@ -50,12 +51,12 @@ function getresult(idnya)
     if rekues2.success then
         ngentod = rekues2.body
         klin = ngentod:gsub('[%s"]', '')
-        resultStatus = klin:match('status:(.*),')
-        log(ngentod)
+        resultStatus = klin:match('status:(.*)}')
+        log(klin)
         log(resultStatus)
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
 end
 
-log("MPE")
+log("AMP")
