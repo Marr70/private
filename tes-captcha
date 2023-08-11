@@ -1,32 +1,13 @@
 function sendcaptcha()
     local text = [[
         {
-            "clientKey": "YOUR_API_KEY",
+            "clientKey": "CAP-5AE19153ACD728D2C6DABEA2B09F78D3",
             "task": {
-              //Required
               "type": "ReCaptchaV2Task",
-              //Required
               "websiteURL": "https://www.google.com/recaptcha/api2/demo",
-              //Required
               "websiteKey": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
               "isInvisible": false,
-              // Optional
-              "pageAction": "submit",
-              //Optional
-              "apiDomain": "",
-              //Optional
-              "userAgent": "",
-              //Optional
-              "cookies": [
-                {
-                  "name": "__Secure-3PSID",
-                  "value": "AIKkIs3ch7YsxxxxYIzRqNZPGm60cdHozgwfUW1o8MF3kRcf8clJscTI6OtCqVpqNF8I88pLBJkUgQ"
-                },
-                {
-                  "name": "__Secure-3PAPISID",
-                  "value": "TKS1iVpGxYbxxxk0n2o/AytXQTb6RUALqxSEL"
-                }
-              ]
+              "pageAction": "submit"
             }
         }          
     ]]
@@ -45,4 +26,4 @@ function sendcaptcha()
     end
 end
 
-log("lolsss")
+log("jancok")
