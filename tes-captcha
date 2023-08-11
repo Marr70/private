@@ -50,7 +50,7 @@ function getresult(idnya)
     if rekues2.success then
         ngentod = rekues2.body
         klin = ngentod:gsub('[%s"]', '')
-        resultStatus = klin:match('status:(.*)["}]')
+        resultStatus = klin:match('status:(.*)[,}]')
         log(klin)
         log(resultStatus)
     else
@@ -58,4 +58,4 @@ function getresult(idnya)
     end
 end
 
-log("MASTER")
+log("MAMA")
