@@ -4,7 +4,7 @@ function sendcaptcha()
             "clientKey": "CAP-5AE19153ACD728D2C6DABEA2B09F78D3",
             "task": {
               "type": "ReCaptchaV2TaskProxyLess",
-              "websiteURL": "https://www.growtopiagame.com/player/login?token=7Xc84tcjEcheQKXPQYAa%2FYQEQUBiXLgZBgkUI1Taj1mNNA5pBIHMX7HOIcnEzJS8DREg9DKEiG4fZbgi6i5OY76hJC5l80%2FXhpCJBsK%2B5hId%2FGUkI661sezmkPSB391gedaWBLMpeOX%2BWqWO6sQ2HWES7v14B0mKjPh2ZhRhwCoyyMUYFbVteWFDrgHCUcrmntl%2Bf%2FeQGzPYxJ0STuk3xspZC61ViS4uQpWJ4QgzcisWN6fF9B2t9Tz0TSELpMDBx1EcL0gyI2YVwvqv4FDfFzhyo2SFYouvUtrMMACs8ZA%3D&platformID=2",
+              "websiteURL": "https://www.google.com/recaptcha/api2/demo",
               "websiteKey": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
               "cookies": "cookiename=1;cookiename=2;cookieName=3"
             }
