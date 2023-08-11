@@ -19,14 +19,14 @@ function sendcaptcha()
     ReqInfo.postData = text
     x = httpReq(ReqInfo)
     if x.success then
-        local response = x.body
+        response = x.body
         log(response)
         log("Response Http Status Code : ",x.httpCode)
         sleep(1000)
-        local cleaned = response:gsub('[%s"]', '')
-        log(cleaned)
-        local resultId = cleaned:match('taskId:(.*),')
+        cleaned = response:gsub('[%s"]', '')
+        resultId = cleaned:match('taskId:(.*),')
         log(resultId)
+        return cleaned
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
