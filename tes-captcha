@@ -78,4 +78,4 @@ function getresult()
     end
 end
 
-log("semoga")
+log("semoga bisa")
