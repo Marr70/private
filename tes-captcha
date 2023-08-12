@@ -75,4 +75,30 @@ function getresult(idnya)
     end
 end
 
-log("BABIBUTA")
+function submit(url,token)
+    local script = [[
+        $url = "]]..url..[["
+
+        $headers = @{
+            "User-agent" = "Mozilla/5.0(Macintosh;IntelMacOSX10_15_7)AppleWebKit/537.36(KHTML,likeGecko)Chrome/114.0.0.0Safari/537.36Edg/114.0.1823.58"
+            "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+            "Accept-Language" = "en-US;q=0.5"
+            "Content-Type" = "application/x-www-form-urlencoded"
+            "Origin" = "https://growtopiagame.com"
+            "Connection" = "keep-alive"
+            "Referer" = "https://growtopiagame.com"
+        }
+
+        $data = @{
+            "g-recaptcha-response" = "]]..token..[["
+        } 
+        
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $data
+    ]]
+    local pipe = io.popen("powershell -command -", "w")
+    pipe:write(script)
+    pipe:close()
+end
+
+log("mumi")
