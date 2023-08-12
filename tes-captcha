@@ -10,7 +10,8 @@ function sendcaptcha(link)
               "websiteURL": "]]..link..[[",
               "websiteKey": "6LdPe_4UAAAAAJ8vlXFg6CuLxZEluUNUtbU87ZGs",
               "isInvisible": false,
-              "pageAction": "submit"
+              "pageAction": "submit",
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
             }
         }          
     ]]
@@ -58,4 +59,4 @@ function getresult(idnya)
     end
 end
 
-log('brown')
+log('aedes')
