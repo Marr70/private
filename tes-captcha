@@ -1,5 +1,12 @@
 resultId = 0
 resultStatus = ""
+tokenCaptcha = ""
+
+function logs2(text)
+    local filewrite = io.open("capsolver.txt", "a+")
+    filewrite:write("\""..text.."\"" .. "\n")
+    filewrite:close()
+end
 
 function sendcaptcha(link)
     local text = [[
@@ -29,6 +36,8 @@ function sendcaptcha(link)
         resultId = cleaned:match('taskId:(.*),')
         log(jancok)
         log(resultId)
+        logs2(jancok)
+        logs2(resultId)
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
@@ -52,11 +61,16 @@ function getresult(idnya)
         ngentod = rekues2.body
         klin = ngentod:gsub('[%s"]', '')
         resultStatus = klin:match('status:(%w+)')
+        if klin:find("solution") then
+            
+        end
         log(klin)
         log(resultStatus)
+        logs2(klin)
+        logs2(resultStatus)
     else
         log("Request Failed Error Msg : ",x.failInfo)
     end
 end
 
-log('gourmet')
+log("SETAN")
