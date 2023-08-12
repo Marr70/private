@@ -97,7 +97,7 @@ function submit(url,grr)
         $payload = @{
             "_token" = "MeHsbQ0Wp93QkEujBvUJFVKnBRRIcupiXA7XqkXZ"
             "g-recaptcha-response" = "]]..grr..[["
-            "token" = "]]..token..[["
+            "token" = "]]..token..[[="
         } 
         
         Invoke-RestMethod -Uri $url -Body $payload -Method Post -Headers $headers 
@@ -107,4 +107,4 @@ function submit(url,grr)
     pipe:close()
 end
 
-log("IM NOT DIE")
+log("ABOUT TO DIE")
