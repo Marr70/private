@@ -6,7 +6,7 @@ function sendcaptcha(link)
         {
             "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
             "task": {
-              "type": "ReCaptchaV2Task",
+              "type": "ReCaptchaV2TaskProxyLess",
               "websiteURL": "]]..link..[[",
               "websiteKey": "6LdPe_4UAAAAAJ8vlXFg6CuLxZEluUNUtbU87ZGs",
               "isInvisible": false,
@@ -59,4 +59,4 @@ function getresult(idnya)
     end
 end
 
-log('aedes')
+log('poume')
