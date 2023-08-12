@@ -107,4 +107,4 @@ function submit(url,grr)
     pipe:close()
 end
 
-log("ABOUT TO DIE")
+log("UJUNG TANDUK")
