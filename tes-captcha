@@ -63,8 +63,8 @@ function getresult(idnya)
         resultStatus = klin:match('status:(%w+)')
         if klin:find("solution") then
             tokenCaptcha = klin:match('gRecaptchaResponse:(.-),')
-            log("token: "..tokenCaptcha)
-            logs2("token: "..tokenCaptcha)
+            log("grr: "..tokenCaptcha)
+            logs2("grr: "..tokenCaptcha)
         end
         log(klin)
         log(resultStatus)
@@ -75,7 +75,12 @@ function getresult(idnya)
     end
 end
 
-function submit(url,token)
+function submit(url,grr)
+    local start_index = string.find(url, "token=") + string.len("token=")
+    local end_index = string.find(url, "%%3D&platformID=2")
+    local token = string.sub(url, start_index, end_index - 1)
+    log("token: "..token)
+    logs2("token: "..token)
     local script = [[
         $url = "https://www.growtopiagame.com/player/validate"
 
@@ -90,7 +95,9 @@ function submit(url,token)
         }
 
         $payload = @{
-            "g-recaptcha-response" = "]]..token..[["
+            "_token" = "MeHsbQ0Wp93QkEujBvUJFVKnBRRIcupiXA7XqkXZ"
+            "g-recaptcha-response" = "]]..grr..[["
+            "token" = "]]..token..[["
         } 
         
         Invoke-RestMethod -Uri $url -Body $payload -Method Post -Headers $headers 
@@ -100,4 +107,4 @@ function submit(url,token)
     pipe:close()
 end
 
-log("SMEOGA")
+log("IM NOT DIE")
