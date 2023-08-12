@@ -6,12 +6,12 @@ function sendcaptcha(link)
         {
             "clientKey": "CAP-57E9353D6D192A1F001F94D3A5C4DFF4",
             "task": {
-              "type": "ReCaptchaV2TaskProxyLess",
+              "type": "ReCaptchaV2Task",
               "websiteURL": "]]..link..[[",
               "websiteKey": "6LdPe_4UAAAAAJ8vlXFg6CuLxZEluUNUtbU87ZGs",
               "isInvisible": false,
               "pageAction": "submit",
-              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
             }
         }          
     ]]
@@ -59,4 +59,4 @@ function getresult(idnya)
     end
 end
 
-log('poume')
+log('gourmet')
