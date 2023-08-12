@@ -62,7 +62,9 @@ function getresult(idnya)
         klin = ngentod:gsub('[%s"]', '')
         resultStatus = klin:match('status:(%w+)')
         if klin:find("solution") then
-            
+            tokenCaptcha = klin:match('gRecaptchaResponse:(.*),')
+            log("token: "..tokenCaptcha)
+            logs2("token: "..tokenCaptcha)
         end
         log(klin)
         log(resultStatus)
@@ -73,4 +75,4 @@ function getresult(idnya)
     end
 end
 
-log("SETAN")
+log("buah")
