@@ -104,4 +104,4 @@ function bot_info(info)
     x = httpReq(RequestINFO)
 end
 
-log("anjay")
+log("AMPUN")
