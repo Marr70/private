@@ -1,0 +1,101 @@
+bot = getBot()
+t = os.time()
+start = 1
+stop = 2
+pack = "World Lock"
+profit = 1000
+str_waktu = ""
+webhook_url = "https://discord.com/api/webhooks/1138735709780455455/JCEJ7Ns3QRGuw6TvW8CcuEwxhoj60aSaq55ft7GXC_U8kolncJ90sWehCVA_bGolUWk_"
+message_id = "1138735938583924766"
+
+
+function bstatus()
+    local stat = bot:getBotStatus()
+    if stat == Success then
+        return "Success"
+    elseif stat == Disconnected then
+        return "Disconnected"
+    elseif stat == OnSendToServer then
+        return "On Send To Server"
+    elseif stat == Banned then
+        return "Banned"
+    elseif stat == Suspended then
+        return "Suspended"
+    elseif stat == Update_Required then
+        return "Update Required"
+    elseif stat == Maintenance then
+        return "Maintenance"
+    elseif stat == SERVER_OVERLOADED then
+        return "Sever Overloaded"
+    end
+end
+
+function estatus()
+    local stat = bot:getEnetStatus()
+    if stat == Connected then
+        return "Connected"
+    elseif stat == Disconnected then
+        return "Disconnected"
+    elseif stat == ShadowBan then
+        return "Shadow Ban"
+    end
+end
+
+function format_number(num)
+    local formattedInteger = tostring(num)
+    local length = string.len(formattedInteger)
+    
+    for i = length - 3, 1, -3 do
+        formattedInteger = string.sub(formattedInteger, 1, i) .. "." .. string.sub(formattedInteger, i + 1)
+    end
+    
+    return formattedInteger
+end
+
+function bot_info(info)
+    te = os.time() - t
+    fossill = fossil[bot:getCurrentWorld()] or 0
+
+    local script = [[
+        {
+            "content": null,
+            "embeds": [
+              {
+                "title": "**Rotation By Marr**",
+                "description": "<a:discord:1138478862246887565> <@729710444348047402>\n<a:discord:1138478862246887565> [Marr's Script](https://discord.gg/cmzSspaEPD)",
+                "color": 0,
+                "fields": [
+                  {
+                    "name": "__BOT INFORMATION__",
+                    "value": "<:icon_info:1138481461679374437> **Task** : ]]..info..[[\n<:information:1138481768043925524> **Bot Name** : ]]..bot:getLocal().name..[[ **(]]..bot:getLocal().level..[[)**\n<:offline_desktop:1138483667853914162> **Bot Status** : ]]..bstatus()..[[\n<:offline_web:1138483945026097242> **ENet Status** : ]]..estatus()..[[\n<:silver:1138484923875999774> **Gems** : ]]..format_number(bot:getLocal().gems)..[[\n<:globes:1138503798097186887> **World ** : ]]..bot:getCurrentWorld()..[[ **(]]..fossill..[[)**\n <:todo_list:1138498112042832013> **World Order** : ]]..start..[[ / ]]..stop..[[",
+                    "inline": true
+                  },
+                  {
+                    "name": "__PACK INFORMATION__",
+                    "value": "<:Shoppingcart:1138495901216808990> **Pack Name** : ]]..pack..[[\n<:dollars:1138496407276363906> **Profit** : ]]..profit..[[ ]]..pack..[[",
+                    "inline": true
+                  },
+                  {
+                    "name": "__WORLD INFORMATION__",
+                    "value": "]]..str_waktu..[["
+                  }
+                ],
+                "footer": {
+                  "text": "Bot Uptime: ]]..math.floor(te/86400)..[[ Day ]]..math.floor(te%86400/3600)..[[ Hour ]]..math.floor(te%86400%3600/60)..[[ Minute \nmarrcats | ]]..(os.date("!%a %b %d, %Y at %I:%M %p", os.time() + 7 * 60 * 60))..[[",
+                  "icon_url": "https://i.ibb.co/5nsZxb6/Marr-script-1.png"
+                },
+                "thumbnail": {
+                  "url": "https://i.ibb.co/JvJzNWT/Marr-script-1.png"
+                }
+              }
+            ],
+        }
+    ]]
+
+    RequestINFO = {}
+    RequestINFO.url = webhook_url.."/messages/"..message_id
+    RequestINFO.method = PATCH
+    RequestINFO.json = true
+    RequestINFO.postData = script
+    x = httpReq(RequestINFO)
+end
