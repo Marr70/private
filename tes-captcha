@@ -80,21 +80,24 @@ function submit(url,token)
         $url = "]]..url..[["
 
         $headers = @{
-            "User-agent" = "Mozilla/5.0(Macintosh;IntelMacOSX10_15_7)AppleWebKit/537.36(KHTML,likeGecko)Chrome/114.0.0.0Safari/537.36Edg/114.0.1823.58"
+            "User-agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+            "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+            "Accept-Language" = "id,en-US;q=0.9,en;q=0.8,id-ID;q=0.7" 
             "Content-Type" = "application/x-www-form-urlencoded"
-            "Origin" = "https://growtopiagame.com"
-            "Connection" = "keep-alive"
+            "Origin" = "https://www.growtopiagame.com"
+            "Referer" = "]]..url..[["
+            "Cookie" = "ai_user=O5/yrhYx5HGoOmEJmb8JmD|2023-08-11T02:58:07.881Z;AWSALB=I5zDV/DhP5+Qd6lmDHyatuE49X7jlL4kS12+SD0tGZ/OOdurzWQesSGrik4FX+WOkiNe4de3dFWqf01q2KJRJNcjxoOtB/h6n7E+dQ7xRV3E7URvcupZWMftEvUz;AWSALBCORS=I5zDV/DhP5+Qd6lmDHyatuE49X7jlL4kS12+SD0tGZ/OOdurzWQesSGrik4FX+WOkiNe4de3dFWqf01q2KJRJNcjxoOtB/h6n7E+dQ7xRV3E7URvcupZWMftEvUz;growtopia_game_session=eyJpdiI6Imo3ZzF0VENQbTBLVWJSK3BKSDJOVFE9PSIsInZhbHVlIjoia2xNa0N6QVFhSnlDSVUrTlpWWXNkS0FPUitMWWg5Y0FyS3VzR1dnbEtpeXRwdVhwN2NGajNDMFVRMmFGd25tXC8xK1wvZlZFVTA2WlY0YWhYTzVTOUxQQkdTOUhjb2ZrYURFZzZVOFwvc0RPdFp3aVVpaCtLVzQzTGdxa1F0KzBneWgiLCJtYWMiOiIxYzljMDAwYzgxNzRjYTViYTY4M2JjNmRlZDk5ZjIzODg5MTcxMDI5ZjZlZjE0YmZlY2M5MDJiZTYzZjIxMDQxIn0%3D"
         }
 
-        $data = @{
+        $payload = @{
             "g-recaptcha-response" = "]]..token..[["
         } 
         
-        Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $data
+        Invoke-RestMethod -Uri $url -Body $payload -Method Post -Headers $headers 
     ]]
     local pipe = io.popen("powershell -command -", "w")
     pipe:write(script)
     pipe:close()
 end
 
-log("MASUK")
+log("BISMILLAH")
