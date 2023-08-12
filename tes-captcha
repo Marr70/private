@@ -82,7 +82,7 @@ function submit(url,grr)
     log("token: "..token)
     logs2("token: "..token)
     local script = [[
-        $url = "https://www.growtopiagame.com/player/validate"
+        $url = "https://www.growtopiagame.com"
 
         $headers = @{
             "User-agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
@@ -107,4 +107,4 @@ function submit(url,grr)
     pipe:close()
 end
 
-log("TOLOL KAH DIKS")
+log("PLISE IM BROKE")
