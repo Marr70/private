@@ -102,6 +102,11 @@ function bot_info(info)
     RequestINFO.json = true
     RequestINFO.postData = script
     x = httpReq(RequestINFO)
+    if x.success then
+        log(x.body)
+    else
+        log("Failed : ", x.failInfo)
+    end
 end
 
 log("Majidjiasd")
