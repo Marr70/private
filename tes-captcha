@@ -107,4 +107,4 @@ function submit(url,grr)
     pipe:close()
 end
 
-log("UJUNG TANDUK")
+log("TOLOL KAH DIKS")
