@@ -27,6 +27,8 @@ function bstatus()
         return "Maintenance"
     elseif stat == SERVER_OVERLOADED then
         return "Sever Overloaded"
+    else
+        return 0
     end
 end
 
@@ -38,6 +40,8 @@ function estatus()
         return "Disconnected"
     elseif stat == ShadowBan then
         return "Shadow Ban"
+    else
+        return 0
     end
 end
 
