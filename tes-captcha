@@ -107,4 +107,4 @@ function submit(url,grr)
     pipe:close()
 end
 
-log("PLISE IM BROKE")
+log("PLIS LAH TOL")
