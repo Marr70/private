@@ -103,3 +103,5 @@ function bot_info(info)
     RequestINFO.postData = script
     x = httpReq(RequestINFO)
 end
+
+log("YES")
