@@ -92,7 +92,7 @@ function bot_info(info)
                   "url": "https://i.ibb.co/JvJzNWT/Marr-script-1.png"
                 }
               }
-            ],
+            ]
         }
     ]]
 
@@ -104,4 +104,4 @@ function bot_info(info)
     x = httpReq(RequestINFO)
 end
 
-log("YES")
+log("anjay")
