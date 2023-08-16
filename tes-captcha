@@ -77,7 +77,7 @@ end
 
 function submit(url,grr)
     local script = [[
-        $url = "https://www.growtopiagame.com"
+        $url = "]]..url..[["
 
         $headers = @{
             "User-agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
@@ -100,4 +100,4 @@ function submit(url,grr)
     pipe:close()
 end
 
-log("NCEN ASU")
+log("SEMOGA TOL")
