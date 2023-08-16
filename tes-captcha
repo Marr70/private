@@ -76,11 +76,6 @@ function getresult(idnya)
 end
 
 function submit(url,grr)
-    local start_index = string.find(url, "token=") + string.len("token=")
-    local end_index = string.find(url, "%%3D&platformID=2")
-    local token = string.sub(url, start_index, end_index - 1)
-    log("token: "..token)
-    logs2("token: "..token)
     local script = [[
         $url = "https://www.growtopiagame.com"
 
@@ -95,9 +90,7 @@ function submit(url,grr)
         }
 
         $payload = @{
-            "_token" = "MeHsbQ0Wp93QkEujBvUJFVKnBRRIcupiXA7XqkXZ"
             "g-recaptcha-response" = "]]..grr..[["
-            "token" = "]]..token..[[="
         } 
         
         Invoke-RestMethod -Uri $url -Body $payload -Method Post -Headers $headers 
@@ -107,4 +100,4 @@ function submit(url,grr)
     pipe:close()
 end
 
-log("PLIS LAH TOL")
+log("KONTOL")
